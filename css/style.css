@@ -1,16 +1,17 @@
 body {
     margin: 0;
     padding: 0;
-    min-width: 320px;
+
 }
 
 .previewContainer {
     display: flex;
     align-items: center;
-    margin: 10px 5px;
+    /*margin: 10px 0;*/
 }
 .previewContainer:hover {
     background-color: cornsilk;
+    outline: 1px solid black;
 }
 .previewAvatar {
     width: 50px;
@@ -19,6 +20,7 @@ body {
 }
 .previewUsername {
     margin: 15px;
+    text-transform: capitalize;
 }
 
 .selectedItem {
@@ -26,44 +28,55 @@ body {
 }
 
 header {
-    display: flex;
     position: sticky;
-    justify-content: space-between;
     top: 0;
+    box-sizing: border-box;
+    display: block;
+    flex-direction: column;
     background-color: burlywood;
     padding: 10px;
+    width: 100%;
 }
 .btn{
+    display: block;
     font-size: 1.2em;
     border: 1px solid black;
     padding: 5px;
+    background-color: deepskyblue;
+
 }
 main {
-    min-height: 100px;
-    margin: 5px;
+    display: flex;
+    justify-content: flex-start;
+    /*margin: 5px;*/
+    width: 100%;
+    flex-wrap: wrap;
 }
 footer {
-    display: flex;
+    display: block;
     position: sticky;
-    justify-content: center;
-    background-color: burlywood;
-    padding: 10px;
     bottom: 0;
+    text-align: center;
+    background-color: burlywood;
+    padding: 10px 0;
+    box-sizing: border-box;
+    width: 100%;
 }
-#popup {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid black;
-    position: fixed;
-    margin: auto;
-    top: 0; left: 0; bottom: 0; right: 0;
-    z-index: 10;
-    background-color: white;
-    width: 400px;
-    height: 400px;
-}
+/*#popup {*/
+    /*display: none;*/
+    /*flex-direction: column;*/
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
+    /*border: 1px solid black;*/
+    /*position: fixed;*/
+    /*margin: auto;*/
+    /*top: 0; left: 0; bottom: 0; right: 0;*/
+    /*z-index: 10;*/
+    /*background-color: cornsilk;*/
+    /*width: 400px;*/
+    /*height: 400px;*/
+    /*text-transform: capitalize;*/
+/*}*/
 
 #overlay {
     display: none;
@@ -84,4 +97,38 @@ footer {
 #popup > div {
     margin: 10px;
     font-family: "Bookman Old Style";
+}
+
+#popupEmail {
+    text-transform: lowercase;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 600px){
+    header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid black;
+    }
+
+    main {
+        display: inline-block;
+        width: 100%;
+    }
+    .previewContainer {
+        border-bottom: 1px solid black;
+        width: 100%;
+    }
+
+}
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+
+}
+@media only screen and (min-width: 1024px) {
+
 }

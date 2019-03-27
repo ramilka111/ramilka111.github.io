@@ -13,7 +13,6 @@ function createListElement(item) {
 
     root.addEventListener('click', () => {
         showPopupElement(item);
-        showPopupInfo(item);
         overlay.addEventListener('click', () => {
             hidePopupElement();
         } )
@@ -26,51 +25,38 @@ function createListElement(item) {
 const popup = document.getElementById('popup');
 const overlay = document.getElementById('overlay');
 
-function showPopupElement() {
+function showPopupElement(item) {
     overlay.style.display = 'block';
     popup.style.display = 'flex';
+
+    const popupName = document.getElementById('popupName');
+    popupName.innerHTML = `${item.name.first} ${item.name.last}`;
+
+    const largeAvatar = document.getElementById('popupImg');
+    largeAvatar.src = item.picture.large;
+    largeAvatar.classList.add('largeAvatar');
+
+    const popupStreet = document.getElementById('popupStreet');
+    popupStreet.innerHTML = 'Address:  ' + `${item.location.street}`;
+
+    const popupCity = document.getElementById('popupCity');
+    popupCity.innerHTML = 'City:  ' + `${item.location.city}`.charAt(0).toUpperCase() + `${item.location.city}`.slice(1);
+
+    const popupState = document.getElementById('popupState');
+    popupState.innerHTML = 'State:  ' + `${item.location.state}`.charAt(0).toUpperCase() + `${item.location.state}`.slice(1);
+
+    const popupEmail = document.getElementById('popupEmail');
+    popupEmail.innerHTML = 'Email:  ' + `${item.email}`;
+
+    const popupPhone = document.getElementById('popupPhone');
+    popupPhone.innerHTML = 'Phone number:  ' + `${item.phone}`;
 }
 
 function hidePopupElement() {
     popup.style.display = 'none';
     overlay.style.display = 'none';
-
-    document.getElementById('popup').innerHTML = "";
 }
 
-function showPopupInfo(item) {
-    const popupName = document.createElement('div');
-    popupName.innerHTML = `${item.name.first} ${item.name.last}`;
-    popup.appendChild(popupName);
-
-    const largeAvatar = document.createElement('img');
-    largeAvatar.src = item.picture.large;
-    largeAvatar.classList.add('largeAvatar');
-    popup.appendChild(largeAvatar);
-
-    const popupStreet = document.createElement('div');
-    popup.appendChild(popupStreet);
-    popupStreet.innerHTML = 'Address:  ' + `${item.location.street}`;
-
-    const popupCity = document.createElement('div');
-    popup.appendChild(popupCity);
-    popupCity.innerHTML = 'City:  ' + `${item.location.city}`.charAt(0).toUpperCase() + `${item.location.city}`.slice(1);
-
-    const popupState = document.createElement('div');
-    popup.appendChild(popupState);
-    popupState.innerHTML = 'State:  ' + `${item.location.state}`.charAt(0).toUpperCase() + `${item.location.state}`.slice(1);
-
-    const popupEmail = document.createElement('div');
-    popup.appendChild(popupEmail);
-    popupEmail.innerHTML = 'Email:  ' + `${item.email}`;
-
-    const popupPhone = document.createElement('div');
-    popup.appendChild(popupPhone);
-    popupPhone.innerHTML = 'Phone number:  ' + `${item.phone}`;
-
-
-
-}
 function render(data) {
     const main = document.querySelector('main');
 
