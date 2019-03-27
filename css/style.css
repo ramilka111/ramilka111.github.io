@@ -1,13 +1,14 @@
 body {
     margin: 0;
     padding: 0;
-
 }
 
 .previewContainer {
     display: flex;
     align-items: center;
-    /*margin: 10px 0;*/
+    margin: 10px 5px;
+    width: 20%;
+
 }
 .previewContainer:hover {
     background-color: cornsilk;
@@ -31,22 +32,22 @@ header {
     position: sticky;
     top: 0;
     box-sizing: border-box;
-    display: block;
-    flex-direction: column;
     background-color: burlywood;
     padding: 10px;
     width: 100%;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
 }
 .btn{
     display: block;
     font-size: 1.2em;
     border: 1px solid black;
     padding: 5px;
-    background-color: deepskyblue;
+    background-color: #6C8CD5;
 
 }
 main {
-    display: flex;
+    /*display: flex;*/
     justify-content: flex-start;
     /*margin: 5px;*/
     width: 100%;
@@ -61,22 +62,24 @@ footer {
     padding: 10px 0;
     box-sizing: border-box;
     width: 100%;
+    border-top: 1px solid black;
+    margin-top: 10px;
 }
-/*#popup {*/
-    /*display: none;*/
-    /*flex-direction: column;*/
-    /*justify-content: space-between;*/
-    /*align-items: center;*/
-    /*border: 1px solid black;*/
-    /*position: fixed;*/
-    /*margin: auto;*/
-    /*top: 0; left: 0; bottom: 0; right: 0;*/
-    /*z-index: 10;*/
-    /*background-color: cornsilk;*/
-    /*width: 400px;*/
-    /*height: 400px;*/
-    /*text-transform: capitalize;*/
-/*}*/
+#popup {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    position: fixed;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 10;
+    background-color: cornsilk;
+    width: 400px;
+    height: 400px;
+    text-transform: capitalize;
+}
 
 #overlay {
     display: none;
@@ -96,7 +99,7 @@ footer {
 
 #popup > div {
     margin: 10px;
-    font-family: "Bookman Old Style";
+    font-family: "Bookman Old Style", serif;
 }
 
 #popupEmail {
@@ -104,15 +107,6 @@ footer {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 600px){
-    header {
-        position: sticky;
-        top: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        border-bottom: 1px solid black;
-    }
-
     main {
         display: inline-block;
         width: 100%;
@@ -120,15 +114,58 @@ footer {
     .previewContainer {
         border-bottom: 1px solid black;
         width: 100%;
+        margin: 0;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+    }
+    .btn {
+        text-align: center;
+    }
+    .previewAvatar {
+        margin-left: 15px;
+    }
+    #popup {
+        width: 90%;
+        height: 70%;
+        text-align: center;
     }
 
 }
-@media only screen and (min-width: 601px) and (max-width: 767px) {
-
-}
-@media only screen and (min-width: 768px) and (max-width: 1023px){
-
+@media only screen and (min-width: 601px) and (max-width: 1023px){
+    header{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    main {
+        display: flex;
+    }
+    .previewContainer {
+        display: flex;
+        border-bottom: 1px solid black;
+        width: 50%;
+        margin: 0;
+        padding: 5px 0;
+    }
+    .btn {
+        width: 50%;
+    }
+    .previewAvatar {
+        margin-left: 15px;
+    }
 }
 @media only screen and (min-width: 1024px) {
-
+    main {
+        display: flex;
+    }
+    .previewContainer {
+        display: flex;
+        margin: 10px 5px;
+        width: 19%;
+    }
+    .btn {
+        width: 20%;
+        text-align: center;
+    }
 }
